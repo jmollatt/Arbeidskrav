@@ -18,6 +18,8 @@ definerte hjelpekriterier for å sikre at man faktisk har funnet deltakerens mak
 (Tønnesen et al, 2017). Følgende kriterier er beskrevet; platå i V'O2 er oppnådd, økning i ventilasjon
 med utflating av V'O2 verdi, RER over 1.10/1.05, og blodlaktat over 8.
 
+Legge til mer fra Beltz 2016, Graded Excercise Testing??
+
 
 ##Metode
 
@@ -64,8 +66,7 @@ testlederne, sin kjennskap til testen er en annen faktor som trolig påvirker re
 I dette tilfellet fantes det enkelte deltakere som hadde gjennomført en liknende test flere ganger, og en
 kan da forvente en mindre grad av variasjon mellom resultatene på pre og post test, sammenlignet med de
 deltakerne som gjennomførte testen for første gang på pretest. Dette fordi kjennskapen og kunnskapen de
-tilegnet seg på pre-test, trolig spiller inn på testresultatene. Standardfeilen på (SETT INN) kan også
-tyde på at enkelte av disse resultatene kan være utsatt for konfundering av ulik sort(Hopkins,2000). 
+tilegnet seg på pre-test, trolig spiller inn på testresultatene. Standardfeilen på (SETT INN kode) kan også tyde på at enkelte av disse resultatene kan være utsatt for konfundering av ulik sort (Hopkins,2000). 
 
 
 
