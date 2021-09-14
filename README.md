@@ -1,0 +1,2 @@
+# Arbeidskrav
+Arbeidskrav i reliabilitet
