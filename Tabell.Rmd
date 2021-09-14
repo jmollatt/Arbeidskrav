@@ -7,7 +7,37 @@ output: html_document
 
 ```{r}
 vo2g1 <- read_excel("data/vo2g1.xlsx")
-View(vo2g1)
+library(dplyr)
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(flextable)
 
+vo2g1 %>% # heter vo2data
+  select(fp, time, sex, age, height, weight) %>% 
+  # Velger fp, time, sex, age, height and weight
+  
+  filter(time == "pre") %>% # filter for å bare ha resulat fra pre
+  
+  group_by(sex) %>% # lager grupper for kjønn
+  mutate(n = n()) %>% # legger til variabel for å få antall deltagere per kjønn
+   pivot_longer(names_to = "variable", 
+               values_to = "value", 
+               cols = age:n) %>% # summerer alle varibler og legger til "varible" og "Value" som kolonne og variablene som rader
+   group_by(sex, variable) %>% # definerer gruppene på nytt 
+  summarise(m = mean(value), 
+            s = sd(value)) %>% # regner ut gjennomnsitt og sdandardavvik og legger til som kolonne
+  mutate(ms = if_else(variable == "n", as.character(m), paste0(signif(m, 3),  " (", signif(s, 3), ")"))) %>% # formaterer det på gunstig måte og bruker signif til å runde av desiamler.
+   ungroup() %>% # må til for å fjerne kolonner
+  select(-m, -s) %>% # Velger de jeg skal fjerne
+   pivot_wider(names_from = sex, 
+              values_from = ms) %>% # Henter navn fra sex og verdier fra values og danner en bredere tabell
+   mutate(variable = factor(variable, levels = c("n", "age", "weight", "height"), labels = c("N", "Alder (år)", "Vekt (kg)", "høyde (cm)"))) %>% # Endrer navn på variabler 
+  arrange(variable) %>% 
+   flextable()  %>%
+   set_header_labels(variable = "",
+                    F = "Kvinner", M = "Menn") %>%
+  add_footer_row(values = "Verdier er gitt som gjenomsnitt og (Standardavvik)", colwidths = 3) %>%
+   autofit()
 ```
 
