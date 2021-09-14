@@ -5,6 +5,7 @@ output: html_document
 ---
 
 ##Introduksjon
+Maksimalt oksygenopptak 
 
 ##Metode
 I forkant av testen målte alle deltakerne kroppsvekt på en vekt plassert
@@ -51,8 +52,9 @@ OLT Testprotokoller (Tønnesen, 2017)
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
-library(tidyverse)
-readxl::"data_vo2max.xlsx"
+library(readxl)
+vo2g1 <- read_excel("data/vo2g1.xlsx")
+glimpse(vo2g1)
 
 ```
 
