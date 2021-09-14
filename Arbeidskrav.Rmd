@@ -1,7 +1,10 @@
 ---
 title: "Arbeidskrav_reliabilitet"
-author: 
-output: html_document
+author: 'null'
+output:
+  word_document: default
+  html_document: default
+  pdf_document: default
 ---
 
 ##Introduksjon
@@ -52,9 +55,7 @@ OLT Testprotokoller (Tønnesen, 2017)
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
-library(readxl)
-vo2g1 <- read_excel("data/vo2g1.xlsx")
-glimpse(vo2g1)
+
 
 ```
 
