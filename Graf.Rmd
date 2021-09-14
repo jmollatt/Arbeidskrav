@@ -1,0 +1,32 @@
+---
+title: "Graf"
+output: html_document
+---
+```{r}
+
+
+
+
+library(readxl)
+vo2g1 <- read_excel("data/vo2g1.xlsx")
+View(vo2g1)
+
+
+glimpse(vo2g1)
+
+ 
+
+
+vo2data <- select(vo2g1, fp, time, `VO2_max_ml/min`, sex)
+
+
+
+
+vo2data
+
+
+
+
+ggplot(vo2data, aes(sex, `VO2_max_ml/min`)) + geom_boxplot()
+```
+
