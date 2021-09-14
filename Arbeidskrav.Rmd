@@ -1,0 +1,58 @@
+---
+title: "Arbeidskrav_reliabilitet"
+author: 
+output: html_document
+---
+
+##Introduksjon
+
+##Metode
+I forkant av testen målte alle deltakerne kroppsvekt på en vekt plassert
+i laben. Deltakerne målte kroppsvekten i samme klær som de skulle
+gjennomføre testen, men ble bedt om å ta av seg skoene. Kroppsvekten som
+senere brukt i beregningen av maksimalt oksygenopptak (ml/min/kg) er
+kroppsvekten målt i forkant av test, etter at 300g har blitt trukket av
+for å ta høyde for vekten av klærne. For å sikre intern validitet ble
+deltakerne bedt om å avstå fra anstrengende fysisk aktivitet dagen før
+test, samt avstå fra inntak av koffein de siste 12 timene før
+testen(Halperin, 2000). Pre- og post-tester ble gjennomført på samme tid
+på døgnet, i tillegg til at deltakerne ble bedt om å innta det samme
+måltidet før både pre og post-test. Alle tester ble også gjennomført
+under samme romforhold og temperatur, i tillegg til at alle deltakerne
+benyttet seg av samme skotøy på både pre- og post-test. 
+
+Alle deltakerne gjennomførte en 10 minutter lang oppvarmingsprotokoll på
+tredemøllen (Woodway), beskrevet for deltakerne i forkant av testen.
+Denne oppvarmingsprotokollen bestod av fem minutter på 11-13 i Borg 6-20
+RPE skala (Borg,1982), etterfulgt av 2x1min på starthastighet og
+stigning. Starthastighet for begge kjønn var satt til 8km/t, med stigning
+på 10,5% og 5,5% for henholdsvis menn og kvinner. 
+
+Maksimalt oksygenopptak (Vo2max) ble målt ved hjelp av en metabolsk
+analysator med miksekammer (Vyntus CareFusion). Forut for alle tester ble
+analysatoren gass og volumkalibrert med en feillmargin på henholdsvis 2%
+og 0,2%. Analysatoren ble stilt inn til å gjøre målinger hvert 30sek, og
+Vo2max ble kalkulert gjennom å bruke snittet av de to høyeste målingene
+av V’O2. Underveis i testen mottok alle deltakerne en høylytt verbal
+oppmuntring fra testleder. Alle deltakerne gjennomførte også begge
+testene med samme testleder og med samme personer til stede i rommet for
+å redusere konfundering(Halperin, 2000). 
+
+For hvert medgåtte minutt av testen ble hastigheten på møllen økt med
+1km/t, helt til utmattelse, hvor testen ble avsluttet. Deltakernes
+hjertefrekvens(GARMIN/POLAR) ble også registrert under hele testen. Når
+testen ble avsluttet ble deltakerne bedt om å rapportere opplevd
+anstrengelse ved hjelp av Borg-skala(Borg,1982). Maksimal hjertefrekvens
+under testen ble også registrert. Ett minutt etter avsluttet test ble
+hjertefrekvens registrert, og det ble målt og analysert
+blodlaktat(BIOSEN). 
+
+OLT Testprotokoller (Tønnesen, 2017)
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+library(tidyverse)
+readxl::"data_vo2max.xlsx"
+
+```
+
