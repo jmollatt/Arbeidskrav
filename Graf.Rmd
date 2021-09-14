@@ -28,5 +28,10 @@ vo2data
 
 
 ggplot(vo2data, aes(sex, `VO2_max_ml/min`)) + geom_boxplot()
+
+
+
+
+ggplot(vo2data, aes(sex, `VO2_max_ml/min`)) + geom_boxplot() + geom_jitter()
 ```
 
