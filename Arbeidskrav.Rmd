@@ -53,6 +53,12 @@ blodlaktat(BIOSEN).
 
 OLT Testprotokoller (Tønnesen, 2017)
 
+##Diskusjon
+
+Ettersom mølletesting av maksimalt oksygenopptak er en test som gjennomføres til utmattelse, vil man kunne forvente en viss variasjon i testresultatene ettersom opplevd anstrengelse kan påvirkes av flere ulike variabler(Halperin, 2000). For å redusere konfundering vil flere faktorer være nyttig å ta hensyn til under slik testing. Eksempler er deltakernes kjennskap til testen, verbal oppmuntring, personer tilstede under testen og dagsform. Felles for alle faktorer er at graden av påvirkning på resultatene muligens reduseres ved hjelp av en standardisert testprotokoll. En faktor som kan påvirke resultatene i de inkluderte datasett er at kjennskap til testen hos både testledere og deltakere var av varierende grad. Enkelte deltakere hadde gjennomført en liknende test flere ganger, og en kan da forvente en mindre grad av variasjon mellom resultatene på pre og post test, sammenlignet med de deltakerne som gjennomførte testen for første gang på pretest. 
+
+
+
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
 
