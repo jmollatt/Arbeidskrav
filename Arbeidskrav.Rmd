@@ -1,10 +1,14 @@
 ---
 title: "Arbeidskrav_reliabilitet"
-author: 
-output: html_document
+author: 'null'
+output:
+  word_document: default
+  html_document: default
+  pdf_document: default
 ---
 
 ##Introduksjon
+Maksimalt oksygenopptak 
 
 ##Metode
 I forkant av testen målte alle deltakerne kroppsvekt på en vekt plassert
@@ -51,8 +55,7 @@ OLT Testprotokoller (Tønnesen, 2017)
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
-library(tidyverse)
-readxl::"data_vo2max.xlsx"
+
 
 ```
 
