@@ -1,0 +1,13 @@
+---
+title: "Descriptives tabell"
+author: "Håvard Crantz Lorentzen"
+date: "14 9 2021"
+output: html_document
+---
+
+```{r}
+vo2g1 <- read_excel("data/vo2g1.xlsx")
+View(vo2g1)
+
+```
+
