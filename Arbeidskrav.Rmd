@@ -25,17 +25,20 @@ Legge til mer fra Beltz 2016, Graded Excercise Testing??
 
 I forkant av testen målte alle deltakerne kroppsvekt på en vekt plassert i laben. Deltakerne målte
 kroppsvekten i samme klær som de skulle gjennomføre testen, men ble bedt om å ta av seg skoene.
-Kroppsvekten som senere brukt i beregningen av maksimalt oksygenopptak (ml/min/kg) er kroppsvekten målt i
-forkant av test, etter at 300g har blitt trukket av for å ta høyde for vekten av klærne. For å sikre
+Kroppsvekten som senere brukt i beregningen av maksimalt oksygenopptak (ml/min/kg) er kroppsvekten målt
+i forkant av test, etter at 300g har blitt trukket av for å ta høyde for vekten av klærne. For å sikre
 intern validitet ble deltakerne bedt om å avstå fra anstrengende fysisk aktivitet dagen før test, samt
 avstå fra inntak av koffein de siste 12 timene før testen(Halperin, 2015). Pre- og post-tester ble
 gjennomført på samme tid på døgnet, i tillegg til at deltakerne ble bedt om å innta det samme måltidet
 før både pre og post-test. Alle tester ble også gjennomført under samme romforhold og temperatur, i
-tillegg til at alle deltakerne benyttet seg av samme skotøy på både pre- og post-test. 
+tillegg til at alle deltakerne benyttet seg av samme skotøy på både pre- og post-test. Post-test ble
+gjennomført 6 dager etter gjennomført pretest. Det ble ikke kontrollert for fysisk aktivitet mellom
+testdagene. 
 
-Alle deltakerne gjennomførte en 10 minutter lang oppvarmingsprotokoll på tredemøllen (Woodway), beskrevet
-for deltakerne i forkant av testen. Denne oppvarmingsprotokollen bestod av fem minutter på 11-13 i Borg
-6-20 RPE skala (Borg,1982), etterfulgt av 2x1min på starthastighet og stigning. Starthastighet for begge
+Alle deltakerne gjennomførte en 10 minutter lang oppvarmingsprotokoll på tredemøllen (Woodway),
+beskrevetfor deltakerne i forkant av testen. Denne oppvarmingsprotokollen bestod av fem minutter på
+11-13 i Borg 6-20 RPE skala (Borg,1982), etterfulgt av 2x1min på starthastighet og stigning.
+Starthastighet for begge
 kjønn var satt til 8km/t, med stigning på 10,5% og 5,5% for henholdsvis menn og kvinner. 
 
 Maksimalt oksygenopptak (Vo2max) ble målt ved hjelp av en metabolsk analysator med miksekammer (Vyntus
@@ -43,7 +46,8 @@ CareFusion). Forut for alle tester ble analysatoren gass og volumkalibrert med e
 henholdsvis 2% og 0,2%. Analysatoren ble stilt inn til å gjøre målinger hvert 30sek, og Vo2max ble
 kalkulert gjennom å bruke snittet av de to høyeste målingene av V’O2. Underveis i testen mottok alle
 deltakerne en høylytt verbal oppmuntring fra testleder. Alle deltakerne gjennomførte også begge testene
-med samme testleder og med samme personer til stede i rommet for å redusere konfundering(Halperin, 2015).
+med samme testleder og med samme personer til stede i rommet for å redusere konfundering(Halperin,
+2015).
 
 
 For hvert medgåtte minutt av testen ble hastigheten på møllen økt med 1km/t, helt til utmattelse, hvor
@@ -53,7 +57,7 @@ testen ble avsluttet ble deltakerne bedt om å rapportere opplevd anstrengelse v
 
 ##Resultater
 
-```{r}
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
 library(readxl)
 vo2g1 <- read_excel("data/vo2g1.xlsx")
 library(dplyr)
@@ -91,8 +95,135 @@ vo2g1 %>% # heter vo2data
 ```
 
 Tabell 1 viser deskriptive data for deltakerne i studien. 
+Figur 1 viser utviklingen fordelt på kvinner og menn fra pre til post-test. 
 
-```{r}
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+
+library(readxl)
+vo2g1 <- read_excel("data/vo2g1.xlsx")
+View(vo2g1)
+
+
+glimpse(vo2g1)
+
+ 
+
+
+vo2data <- select(vo2g1, fp, time, `VO2_max_ml/min`, sex)
+
+
+
+
+vo2data
+
+
+
+
+ggplot(vo2data, aes(sex, `VO2_max_ml/min`)) + geom_boxplot()
+
+
+
+
+ggplot(vo2data, aes(sex, `VO2_max_ml/min`)) + geom_boxplot() + geom_jitter()
+
+
+
+
+vo2data$time <- factor(vo2data$time, levels = c("pre", "post"))
+
+
+
+
+ggplot(vo2data, aes(time, `VO2_max_ml/min`)) + geom_boxplot()
+
+
+
+
+ggplot(vo2data, aes(time, `VO2_max_ml/min`, fill = sex)) + geom_boxplot()
+
+
+
+
+ggplot(vo2data, aes(time, `VO2_max_ml/min`, color = sex, group = fp)) + 
+geom_line() + 
+  geom_point(size = 3 , fill = "lightblue", shape = 21)
+
+
+
+ggplot(vo2data, aes(time, `VO2_max_ml/min`, color = sex, group = fp)) + 
+  geom_line() + 
+  geom_point(size = 3 , fill = "lightblue", shape = 21) +
+  labs(x = "Test tidspunkt",
+  y = "VO2 maks ml/min")
+
+
+ggplot(vo2data, aes(time, `VO2_max_ml/min`, color = sex, group = fp)) + 
+  geom_line() +
+  geom_point(size = 3 , fill = "lightblue", shape = 21) +
+  labs(x = "Test tidspunkt",
+       y = "VO2 maks ml/min", 
+       color = "Kjønn")
+
+
+
+
+
+vo2data$time <- factor(vo2data$time, levels = c("pre", "post"), 
+                           labels = c("Pre-test", "Post-test"))
+
+ggplot(vo2data, aes(time, `VO2_max_ml/min`, color = sex, group = fp)) + 
+  geom_line() +
+  geom_point(size = 3 , fill = "lightblue", shape = 21) +
+  labs(x = "Test tidspunkt",
+       y = "VO2 maks ml/min", 
+       color = "Kjønn")
+
+
+
+
+
+
+
+vo2data$sex <- factor(vo2data$sex, levels =c("F", "M"),
+                      labels = c("Kvinner", "Menn"))
+
+ggplot(vo2data, aes(time, `VO2_max_ml/min`, color = sex, group = fp)) + 
+  geom_line() +
+  geom_point(size = 3 , fill = "lightblue", shape = 21) +
+  labs(x = "Test tidspunkt",
+       y = "VO2 maks ml/min", 
+       color = "Kjønn")
+
+
+
+
+
+
+
+ggplot(vo2data, aes(time, `VO2_max_ml/min`, color = sex, group = fp)) + 
+  geom_line() +
+  geom_point(size = 3 , fill = "lightblue", shape = 21) +
+  labs(x = "Test tidspunkt",
+       y = "VO2 maks ml/min", 
+       color = "Kjønn") + 
+  theme_bw()
+
+
+
+
+ggplot(vo2data, aes(time, `VO2_max_ml/min`, color = sex, group = fp)) + 
+  geom_line() +
+  geom_point(size = 3 , fill = "lightblue", shape = 21) +
+  labs(x = "Test tidspunkt",
+       y = "VO2 maks ml/min", 
+       color = "Kjønn") + 
+  theme_bw() +
+  theme(axis.text.x = element_text(color = "black", size = 12, face = "bold"))
+```
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
 library(tidyverse)
 library(readxl)
 
@@ -109,7 +240,6 @@ reliabilitet <- read_excel("data/realabilitet uttrekning.xlsx") %>%
 print()
 ```
 
-Standardfeilen er i datasettet på det to gruppene. 
 
 ##Diskusjon
 
@@ -121,46 +251,10 @@ tidspunkt for gjennomføring av test være med på å kunne sikre intern validit
 er deltakernes kjennskap til testen, verbal oppmuntring og personer tilstede under testen er andre
 faktorer som potensielt kan bidra til konfundering. Felles for alle faktorer er at graden av påvirkning
 på resultatene muligens reduseres ved hjelp av en standardisert testprotokoll. Deltakerne - og
-testlederne, sin kjennskap til testen er en annen faktor som trolig påvirker resultatene i vårt prosjekt.
-I dette tilfellet fantes det enkelte deltakere som hadde gjennomført en liknende test flere ganger, og en
-kan da forvente en mindre grad av variasjon mellom resultatene på pre og post test, sammenlignet med de
-deltakerne som gjennomførte testen for første gang på pretest. Dette fordi kjennskapen og kunnskapen de
-tilegnet seg på pre-test, trolig spiller inn på testresultatene. Standardfeilen på (SETT INN kode) kan også tyde på at enkelte av disse resultatene kan være utsatt for konfundering av ulik sort (Hopkins,2000). 
-
-```{r}
-vo2g1 <- read_excel("data/vo2g1.xlsx")
-library(dplyr)
-library(tidyverse)
-library(knitr)
-library(kableExtra)
-library(flextable)
-
-vo2g1 %>% # heter vo2data
-  select(fp, time, sex, age, height, weight) %>% 
-  # Velger fp, time, sex, age, height and weight
-  
-  filter(time == "pre") %>% # filter for å bare ha resulat fra pre
-  
-  group_by(sex) %>% # lager grupper for kjønn
-  mutate(n = n()) %>% # legger til variabel for å få antall deltagere per kjønn
-   pivot_longer(names_to = "variable", 
-               values_to = "value", 
-               cols = age:n) %>% # summerer alle varibler og legger til "varible" og "Value" som kolonne og variablene som rader
-   group_by(sex, variable) %>% # definerer gruppene på nytt 
-  summarise(m = mean(value), 
-            s = sd(value)) %>% # regner ut gjennomnsitt og sdandardavvik og legger til som kolonne
-  mutate(ms = if_else(variable == "n", as.character(m), paste0(signif(m, 3),  " (", signif(s, 3), ")"))) %>% # formaterer det på gunstig måte og bruker signif til å runde av desiamler.
-   ungroup() %>% # må til for å fjerne kolonner
-  select(-m, -s) %>% # Velger de jeg skal fjerne
-   pivot_wider(names_from = sex, 
-              values_from = ms) %>% # Henter navn fra sex og verdier fra values og danner en bredere tabell
-   mutate(variable = factor(variable, levels = c("n", "age", "weight", "height"), labels = c("N", "Alder (år)", "Vekt (kg)", "Høyde (cm)"))) %>% # Endrer navn på variabler 
-  arrange(variable) %>% 
-   flextable()  %>%
-   set_header_labels(variable = "",
-                    F = "Kvinner", M = "Menn") %>%
-  add_footer_row(values = "Verdier er gitt som gjennomsnitt og (Standardavvik)", colwidths = 3) %>%
-   autofit()
-```
-
-
+testlederne, sin kjennskap til testen er en annen faktor som trolig påvirker resultatene i vårt
+prosjekt.I dette tilfellet fantes det enkelte deltakere som hadde gjennomført en liknende test flere
+ganger, og en kan da forvente en mindre grad av variasjon mellom resultatene på pre og post test,
+sammenlignet med de deltakerne som gjennomførte testen for første gang på pretest. Dette fordi
+kjennskapen og kunnskapen de tilegnet seg på pre-test, trolig spiller inn på testresultatene.
+Standardfeilen på 4.04% kan også tyde på at enkelte av disse resultatene kan være utsatt for
+konfundering av ulik sort (Hopkins,2000). 
