@@ -1,0 +1,31 @@
+---
+title: "Utregning av TE"
+author: "Håvard Crantz Lorentzen"
+date: "14 9 2021"
+output:
+  pdf_document: default
+  html_document: default
+editor_options: 
+  chunk_output_type: console
+---
+```{r}
+library(tidyverse)
+library(readxl)
+
+
+
+
+reliabilitet <- read_excel("data/realabilitet uttrekning.xlsx") %>%
+  mutate(diff = `VO2_max_ml/min post` - `VO2_max_ml/min pre`) %>% # Change/difference score
+  summarise(s = sd(diff),
+            m = mean(c(`VO2_max_ml/min post`, `VO2_max_ml/min pre`)), # mean
+            te = s / sqrt(2), # the typical error. 
+            cv = 100 * (te / m),
+             L = qt(0.975, 4) * s) %>% # Calculate as a percentage of the mean
+print()
+  
+reliabilitet$cv
+```
+
+
+
