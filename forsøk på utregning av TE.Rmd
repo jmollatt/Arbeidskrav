@@ -1,0 +1,31 @@
+---
+title: "Utregning av TE"
+author: "Håvard Crantz Lorentzen"
+date: "14 9 2021"
+output: html_document
+---
+```{r}
+library(tidyverse)
+library(ggplot2)
+library(knitr)
+library(kableExtra)
+library(dbplyr)
+library(readxl)
+
+
+
+reablilitet <- read_excel("data/realabilitet uttrekning.xlsx")
+View(realabilitet_uttrekning)
+
+reablilitet %>%
+  mutate(diff = `VO2_max_ml/min post` - `VO2_max_ml/min pre`) %>% # Change/difference score
+  summarise(s = round(sd(diff), 1),  # Summarize to calculate sd, and... 
+            m = mean(c(`VO2_max_ml/min post`, `VO2_max_ml/min pre`)), # mean
+            te = round(s / sqrt(2), 1), # the typical error. 
+            cv = round(100 * (te / m), 1), # 
+             L = qt(0.975, 4) * s) %>% # Calculate as a percentage of the mean
+  # Round is used to get less decimal places..
+  print()
+```
+
+
