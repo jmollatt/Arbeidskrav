@@ -49,8 +49,67 @@ med samme testleder og med samme personer til stede i rommet for å redusere kon
 For hvert medgåtte minutt av testen ble hastigheten på møllen økt med 1km/t, helt til utmattelse, hvor
 testen ble avsluttet. Deltakernes hjertefrekvens(GARMIN/POLAR) ble også registrert under hele testen. Når
 testen ble avsluttet ble deltakerne bedt om å rapportere opplevd anstrengelse ved hjelp av Borg-skala
-(Borg,1982). Maksimal hjertefrekvens under testen ble også registrert. Ett minutt etter avsluttet test ble hjertefrekvens registrert, og det ble målt og analysert blodlaktat(BIOSEN). 
+(Borg,1982). Maksimal hjertefrekvens under testen ble også registrert. Ett minutt etter avsluttet test ble hjertefrekvens registrert, og det ble målt og analysert blodlaktat(BIOSEN).
 
+##Resultater
+
+```{r}
+library(readxl)
+vo2g1 <- read_excel("data/vo2g1.xlsx")
+library(dplyr)
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(flextable)
+
+vo2g1 %>% # heter vo2data
+  select(fp, time, sex, age, height, weight) %>% 
+  # Velger fp, time, sex, age, height and weight
+  
+  filter(time == "pre") %>% # filter for å bare ha resulat fra pre
+  
+  group_by(sex) %>% # lager grupper for kjønn
+  mutate(n = n()) %>% # legger til variabel for å få antall deltagere per kjønn
+   pivot_longer(names_to = "variable", 
+               values_to = "value", 
+               cols = age:n) %>% # summerer alle varibler og legger til "varible" og "Value" som kolonne og variablene som rader
+   group_by(sex, variable) %>% # definerer gruppene på nytt 
+  summarise(m = mean(value), 
+            s = sd(value)) %>% # regner ut gjennomnsitt og sdandardavvik og legger til som kolonne
+  mutate(ms = if_else(variable == "n", as.character(m), paste0(signif(m, 3),  " (", signif(s, 3), ")"))) %>% # formaterer det på gunstig måte og bruker signif til å runde av desiamler.
+   ungroup() %>% # må til for å fjerne kolonner
+  select(-m, -s) %>% # Velger de jeg skal fjerne
+   pivot_wider(names_from = sex, 
+              values_from = ms) %>% # Henter navn fra sex og verdier fra values og danner en bredere tabell
+   mutate(variable = factor(variable, levels = c("n", "age", "weight", "height"), labels = c("N", "Alder (år)", "Vekt (kg)", "Høyde (cm)"))) %>% # Endrer navn på variabler 
+  arrange(variable) %>% 
+   flextable()  %>%
+   set_header_labels(variable = "",
+                    F = "Kvinner", M = "Menn") %>%
+  add_footer_row(values = "Verdier er gitt som gjennomsnitt og (Standardavvik)", colwidths = 3) %>%
+   autofit()
+```
+
+Tabell 1 viser deskriptive data for deltakerne i studien. 
+
+```{r}
+library(tidyverse)
+library(readxl)
+
+
+
+
+reliabilitet <- read_excel("data/realabilitet uttrekning.xlsx") %>%
+  mutate(diff = `VO2_max_ml/min post` - `VO2_max_ml/min pre`) %>% # Change/difference score
+  summarise(s = sd(diff),
+            m = mean(c(`VO2_max_ml/min post`, `VO2_max_ml/min pre`)), # mean
+            te = s / sqrt(2), # the typical error. 
+            cv = 100 * (te / m),
+             L = qt(0.975, 4) * s) %>% # Calculate as a percentage of the mean
+print()
+```
+
+Standardfeilen er i datasettet på det to gruppene. 
 
 ##Diskusjon
 
@@ -68,29 +127,40 @@ kan da forvente en mindre grad av variasjon mellom resultatene på pre og post t
 deltakerne som gjennomførte testen for første gang på pretest. Dette fordi kjennskapen og kunnskapen de
 tilegnet seg på pre-test, trolig spiller inn på testresultatene. Standardfeilen på (SETT INN kode) kan også tyde på at enkelte av disse resultatene kan være utsatt for konfundering av ulik sort (Hopkins,2000). 
 
-
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
-
-library(readxl)
+```{r}
+vo2g1 <- read_excel("data/vo2g1.xlsx")
+library(dplyr)
 library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(flextable)
 
-dat <- read_excel("data/vo2g1.xlsx") %>%
-  mutate(diff = ) %>%
+vo2g1 %>% # heter vo2data
+  select(fp, time, sex, age, height, weight) %>% 
+  # Velger fp, time, sex, age, height and weight
   
-  summarise(s = sd(diff), 
-            te = s / sqrt (2),
-            m = mean(c(),
-            cv = ((te / m) * 100) %>%
-              
-cv <- round(dat$cv, 2)
-
-
-  print()
+  filter(time == "pre") %>% # filter for å bare ha resulat fra pre
   
-  
-
-
-
+  group_by(sex) %>% # lager grupper for kjønn
+  mutate(n = n()) %>% # legger til variabel for å få antall deltagere per kjønn
+   pivot_longer(names_to = "variable", 
+               values_to = "value", 
+               cols = age:n) %>% # summerer alle varibler og legger til "varible" og "Value" som kolonne og variablene som rader
+   group_by(sex, variable) %>% # definerer gruppene på nytt 
+  summarise(m = mean(value), 
+            s = sd(value)) %>% # regner ut gjennomnsitt og sdandardavvik og legger til som kolonne
+  mutate(ms = if_else(variable == "n", as.character(m), paste0(signif(m, 3),  " (", signif(s, 3), ")"))) %>% # formaterer det på gunstig måte og bruker signif til å runde av desiamler.
+   ungroup() %>% # må til for å fjerne kolonner
+  select(-m, -s) %>% # Velger de jeg skal fjerne
+   pivot_wider(names_from = sex, 
+              values_from = ms) %>% # Henter navn fra sex og verdier fra values og danner en bredere tabell
+   mutate(variable = factor(variable, levels = c("n", "age", "weight", "height"), labels = c("N", "Alder (år)", "Vekt (kg)", "Høyde (cm)"))) %>% # Endrer navn på variabler 
+  arrange(variable) %>% 
+   flextable()  %>%
+   set_header_labels(variable = "",
+                    F = "Kvinner", M = "Menn") %>%
+  add_footer_row(values = "Verdier er gitt som gjennomsnitt og (Standardavvik)", colwidths = 3) %>%
+   autofit()
 ```
+
 
