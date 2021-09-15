@@ -3,7 +3,15 @@
 title: "Utregning av TE"
 author: "Håvard Crantz Lorentzen"
 date: "14 9 2021"
+<<<<<<< HEAD:forsøk på utregning av TE.Rmd
 output: html_document
+=======
+output:
+  pdf_document: default
+  html_document: default
+editor_options: 
+  chunk_output_type: console
+>>>>>>> d37b523c76c47f16fb76429733eaa183a17d015a:Utregning av TE.Rmd
 ---
 ```{r}
 library(tidyverse)
@@ -23,7 +31,6 @@ print()
   
 reliabilitet
 ```
-## Resultat 
-Typsisk error for Vo2maks-test var `r cv`%
+
 
 
