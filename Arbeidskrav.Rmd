@@ -1,6 +1,6 @@
 ---
 title: "Arbeidskrav_reliabilitet"
-author: 'null'
+authors: HM, JM, MDS, HCL
 output:
   word_document: default
   html_document: default
@@ -256,4 +256,4 @@ konfundering av ulik sort (Hopkins,2000).
 Grunnen til at vi snakker om standardfeil er at når vi ønsker å måle påvirkningen av trening på en gruppe individer er det viktig å kunne si noe om hva som er endring og hva som er støy(målefeil). Desto mindre støy en test innebærer jo bedre er målingen.  Målet som brukes er standardfeil. Hva som danner denne variasjonen som representeres ved typical error er multifaktorelt, men hoveddelen er som oftest biologisk (Hopkins,2000). 
 
 For å måle standardfeil har vi brukt within subject deviation metoden. Denne metoden påvirkes ikke av at gjennomsnittet endrer seg fra test til test (Hopkins,2000). Data for målinger i VO2max fra fem sertifiserte Australske laboratorier fastslo ett gjennomsnitt på 2.2% for standardfeil (Halperin, Pyne, and Martin 2015). Data fra det Australske institutt for sport har også fastslått at en standardfeil på omtrent 2% er riktig for både maksimal og submaksimal VO2 (Clark et al. 2007; Robertson et al. 2010; Saunders et al. 2009). Dette indikerer at med godt kalibrert utstyr og med utøvere som er godt vant med testingen vil en standardfeil på 2% for det biologiske, og analytiske være riktig (Halperin, Pyne, and Martin 2015). 
-Vår standardfeil på 4.04% kan derfor tenkes å være et bilde hvordan det kan se ut med få deltakere, med ulikt utgangspunkt, men også uten skikkelig standardisering av treningshverdagen, og med varierende nivå kan det også tenkes at noen fikk treningseffekt av test 1, samtidig som andre kanskje ble slitne av å få en test inn i treningshverdagen. 
+Vår standardfeil på 4.04% kan derfor tenkes å være et bilde hvordan det kan se ut med få deltakere, med ulikt utgangspunkt, men også uten skikkelig standardisering av treningshverdagen i forkant av testene. Det kan også tenkes at med et varierende nivå hos deltagerne kan enkelte oppleve en treningseffekt av test 1. Samtidig som andre kanskje ble slitne av å få en test inn i treningshverdagen. 
