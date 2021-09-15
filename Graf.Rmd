@@ -1,5 +1,6 @@
 ---
 title: "Graf"
+author: MArgit Dahl Sørensen 
 output: html_document
 ---
 ```{r}
@@ -93,7 +94,7 @@ ggplot(vo2data, aes(time, `VO2_max_ml/min`, color = sex, group = fp)) +
 
 
 vo2data$sex <- factor(vo2data$sex, levels =c("F", "M"),
-                      labels = c("Damer", "Herrer"))
+                      labels = c("Kvinner", "Menn"))
 
 ggplot(vo2data, aes(time, `VO2_max_ml/min`, color = sex, group = fp)) + 
   geom_line() +
