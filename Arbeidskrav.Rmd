@@ -36,17 +36,16 @@ gjennomført 6 dager etter gjennomført pretest. Det ble ikke kontrollert for fy
 testdagene. 
 
 Alle deltakerne gjennomførte en 10 minutter lang oppvarmingsprotokoll på tredemøllen (Woodway),
-beskrevetfor deltakerne i forkant av testen. Denne oppvarmingsprotokollen bestod av fem minutter på
-11-13 i Borg 6-20 RPE skala (Borg,1982), etterfulgt av 2x1min på starthastighet og stigning.
+beskrevet for deltakerne i forkant av testen. Denne oppvarmingsprotokollen bestod av fem minutter på
+11-13 i Borg 6-20 RPE skala (Borg,1982), etterfulgt av 2x1min på starthastighet og stigning med 30 sekkund mellom. Siste tre min var også 11-13 i borg. Etter oppvarming var var det to min pause før selve testen begynte.   
 Starthastighet for begge
 kjønn var satt til 8km/t, med stigning på 10,5% og 5,5% for henholdsvis menn og kvinner. 
 
 Maksimalt oksygenopptak (Vo2max) ble målt ved hjelp av en metabolsk analysator med miksekammer (Vyntus
 CareFusion). Forut for alle tester ble analysatoren gass og volumkalibrert med en feillmargin på
 henholdsvis 2% og 0,2%. Analysatoren ble stilt inn til å gjøre målinger hvert 30sek, og Vo2max ble
-kalkulert gjennom å bruke snittet av de to høyeste målingene av V’O2. Underveis i testen mottok alle
-deltakerne en høylytt verbal oppmuntring fra testleder. Alle deltakerne gjennomførte også begge testene
-med samme testleder og med samme personer til stede i rommet for å redusere konfundering(Halperin,
+kalkulert gjennom å bruke snittet av de to høyeste påfølgende målingene av V’O2. Underveis i testen mottok alle
+deltakerne en høylytt verbal oppmuntring fra testleder. Alle deltakerne gjennomførte også begge testene med samme testleder og med samme personer til stede i rommet for å redusere konfundering(Halperin,
 2015).
 
 
@@ -243,7 +242,7 @@ print()
 
 ##Diskusjon
 
-Ettersom mølletesting av maksimalt oksygenopptak er en test som gjennomføres til utmattelse, vil man
+Ettersom testing av maksimalt oksygenopptak er en test som gjennomføres til utmattelse, vil man
 kunne forvente en viss variasjon i testresultatene ettersom opplevd anstrengelse kan påvirkes av flere
 ulike variabler(Halperin, 2015). For å redusere konfundering vil flere faktorer være nyttig å ta hensyn
 til under slik testing. Som nevnt i metoden vil standardisering av matinntak, koffeininntak, utstyr og
