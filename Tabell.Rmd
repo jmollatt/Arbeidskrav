@@ -37,7 +37,7 @@ vo2g1 %>% # heter vo2data
    flextable()  %>%
    set_header_labels(variable = "",
                     F = "Kvinner", M = "Menn") %>%
-  add_footer_row(values = "Verdier er gitt som gjenomsnitt og (Standardavvik)", colwidths = 3) %>%
+  add_footer_row(values = "Verdier er gitt som gjennomsnitt og (Standardavvik)", colwidths = 3) %>%
    autofit()
 ```
 
