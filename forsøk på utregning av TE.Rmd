@@ -6,31 +6,23 @@ output: html_document
 ---
 ```{r}
 library(tidyverse)
-library(ggplot2)
-library(knitr)
-library(kableExtra)
-library(dbplyr)
 library(readxl)
 
 
 
-reablilitet <- read_excel("data/realabilitet uttrekning.xlsx")
-View(realabilitet_uttrekning)
 
-reablilitet %>%
+reliabilitet <- read_excel("data/realabilitet uttrekning.xlsx") %>%
   mutate(diff = `VO2_max_ml/min post` - `VO2_max_ml/min pre`) %>% # Change/difference score
-  summarise(s = sd(diff),  # Summarize to calculate sd, and... 
+  summarise(s = sd(diff),
             m = mean(c(`VO2_max_ml/min post`, `VO2_max_ml/min pre`)), # mean
             te = s / sqrt(2), # the typical error. 
-            cv = 100 * (te / m), # 
+            cv = 100 * (te / m),
              L = qt(0.975, 4) * s) %>% # Calculate as a percentage of the mean
-  # Round is used to get less decimal places..
-  print()
-
-
-reablilitet$cv
+print()
   
-  
+reliabilitet
 ```
+## Resultat 
+Typsisk error for Vo2maks-test var `r cv`%
 
 
