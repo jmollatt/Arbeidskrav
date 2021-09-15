@@ -244,8 +244,7 @@ print()
 
 Ettersom testing av maksimalt oksygenopptak er en test som gjennomføres til utmattelse, vil man
 kunne forvente en viss variasjon i testresultatene ettersom opplevd anstrengelse kan påvirkes av flere
-ulike variabler(Halperin, 2015). For å redusere konfundering vil flere faktorer være nyttig å ta hensyn
-til under slik testing. Som nevnt i metoden vil standardisering av matinntak, koffeininntak, utstyr og
+ulike variabler(Halperin, 2015). For å redusere konfundering vil flere faktorer være nyttig å ta hensyn til under slik testing. Som nevnt i metoden vil standardisering av matinntak, koffeininntak, utstyr og
 tidspunkt for gjennomføring av test være med på å kunne sikre intern validitet i resultatene. Eksempler
 er deltakernes kjennskap til testen, verbal oppmuntring og personer tilstede under testen er andre
 faktorer som potensielt kan bidra til konfundering. Felles for alle faktorer er at graden av påvirkning
