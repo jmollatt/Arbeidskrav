@@ -37,16 +37,16 @@ testdagene.
 
 Alle deltakerne gjennomførte en 10 minutter lang oppvarmingsprotokoll på tredemøllen (Woodway),
 beskrevet for deltakerne i forkant av testen. Denne oppvarmingsprotokollen bestod av fem minutter på
-11-13 i Borg 6-20 RPE skala (Borg,1982), etterfulgt av 2x1min på starthastighet og stigning med 30 sekkund mellom. Siste tre min var også 11-13 i borg. Etter oppvarming var var det to min pause før selve testen begynte.   
-Starthastighet for begge
+11-13 i Borg 6-20 RPE skala (Borg,1982), etterfulgt av 2x1min på starthastighet og stigning med 30
+sekund mellom. Siste tre min var også 11-13 i borg. Etter oppvarming var var det to min pause før selve
+testen begynte.   Starthastighet for begge
 kjønn var satt til 8km/t, med stigning på 10,5% og 5,5% for henholdsvis menn og kvinner. 
 
-Maksimalt oksygenopptak (Vo2max) ble målt ved hjelp av en metabolsk analysator med miksekammer (Vyntus
-CareFusion). Forut for alle tester ble analysatoren gass og volumkalibrert med en feillmargin på
+Maksimalt oksygenopptak (Vo2max) ble målt ved hjelp av en metabolsk analysator med miksekammer (Vyntus CareFusion). Forut for alle tester ble analysatoren gass og volumkalibrert med en feillmargin på
 henholdsvis 2% og 0,2%. Analysatoren ble stilt inn til å gjøre målinger hvert 30sek, og Vo2max ble
 kalkulert gjennom å bruke snittet av de to høyeste påfølgende målingene av V’O2. Underveis i testen mottok alle
-deltakerne en høylytt verbal oppmuntring fra testleder. Alle deltakerne gjennomførte også begge testene med samme testleder og med samme personer til stede i rommet for å redusere konfundering(Halperin,
-2015).
+deltakerne en høylytt verbal oppmuntring fra testleder. Alle deltakerne gjennomførte også begge testene med samme testleder og med samme personer til stede i rommet for å
+redusere konfundering(Halperin,2015).
 
 
 For hvert medgåtte minutt av testen ble hastigheten på møllen økt med 1km/t, helt til utmattelse, hvor
@@ -93,8 +93,7 @@ vo2g1 %>% # heter vo2data
    autofit()
 ```
 
-Tabell 1 viser deskriptive data for deltakerne i studien. 
-Figur 1 viser utviklingen fordelt på kvinner og menn fra pre til post-test. 
+Det var 11 deltakere i studien, samtlige deltakere er studenter ved Høgskolen i Innlandet. Deskriptive data for disse deltakerne er vist i Tabell 1, i Figur 1 kan man se utviklingen fra pre-test til post-test fordelt på kjønn. Standardfeilen fra pre til post-test er utregnet til å være 4.04%, basert på utregning etter Hopkins og kollegaer. (Hopkins, 2000 )
 
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
