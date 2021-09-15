@@ -32,7 +32,7 @@ vo2g1 %>% # heter vo2data
   select(-m, -s) %>% # Velger de jeg skal fjerne
    pivot_wider(names_from = sex, 
               values_from = ms) %>% # Henter navn fra sex og verdier fra values og danner en bredere tabell
-   mutate(variable = factor(variable, levels = c("n", "age", "weight", "height"), labels = c("N", "Alder (år)", "Vekt (kg)", "høyde (cm)"))) %>% # Endrer navn på variabler 
+   mutate(variable = factor(variable, levels = c("n", "age", "weight", "height"), labels = c("N", "Alder (år)", "Vekt (kg)", "Høyde (cm)"))) %>% # Endrer navn på variabler 
   arrange(variable) %>% 
    flextable()  %>%
    set_header_labels(variable = "",
