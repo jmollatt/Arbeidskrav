@@ -53,17 +53,21 @@ ggplot(vo2data, aes(time, `VO2_max_ml/min`, fill = sex)) + geom_boxplot()
 
 
 ggplot(vo2data, aes(time, `VO2_max_ml/min`, color = sex, group = fp)) + 
-geom_line()
+geom_line() + 
+  geom_point(size = 3 , fill = "lightblue", shape = 21)
 
 
 
 ggplot(vo2data, aes(time, `VO2_max_ml/min`, color = sex, group = fp)) + 
-  geom_line() + labs(x = "Test tidspunkt",
+  geom_line() + 
+  geom_point(size = 3 , fill = "lightblue", shape = 21) +
+  labs(x = "Test tidspunkt",
   y = "VO2 maks ml/min")
 
 
 ggplot(vo2data, aes(time, `VO2_max_ml/min`, color = sex, group = fp)) + 
   geom_line() +
+  geom_point(size = 3 , fill = "lightblue", shape = 21) +
   labs(x = "Test tidspunkt",
        y = "VO2 maks ml/min", 
        color = "Kjønn")
@@ -77,6 +81,7 @@ vo2data$time <- factor(vo2data$time, levels = c("pre", "post"),
 
 ggplot(vo2data, aes(time, `VO2_max_ml/min`, color = sex, group = fp)) + 
   geom_line() +
+  geom_point(size = 3 , fill = "lightblue", shape = 21) +
   labs(x = "Test tidspunkt",
        y = "VO2 maks ml/min", 
        color = "Kjønn")
@@ -92,6 +97,7 @@ vo2data$sex <- factor(vo2data$sex, levels =c("F", "M"),
 
 ggplot(vo2data, aes(time, `VO2_max_ml/min`, color = sex, group = fp)) + 
   geom_line() +
+  geom_point(size = 3 , fill = "lightblue", shape = 21) +
   labs(x = "Test tidspunkt",
        y = "VO2 maks ml/min", 
        color = "Kjønn")
@@ -104,6 +110,7 @@ ggplot(vo2data, aes(time, `VO2_max_ml/min`, color = sex, group = fp)) +
 
 ggplot(vo2data, aes(time, `VO2_max_ml/min`, color = sex, group = fp)) + 
   geom_line() +
+  geom_point(size = 3 , fill = "lightblue", shape = 21) +
   labs(x = "Test tidspunkt",
        y = "VO2 maks ml/min", 
        color = "Kjønn") + 
@@ -114,6 +121,7 @@ ggplot(vo2data, aes(time, `VO2_max_ml/min`, color = sex, group = fp)) +
 
 ggplot(vo2data, aes(time, `VO2_max_ml/min`, color = sex, group = fp)) + 
   geom_line() +
+  geom_point(size = 3 , fill = "lightblue", shape = 21) +
   labs(x = "Test tidspunkt",
        y = "VO2 maks ml/min", 
        color = "Kjønn") + 
