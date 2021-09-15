@@ -2,7 +2,9 @@
 title: "Utregning av TE"
 author: "Håvard Crantz Lorentzen"
 date: "14 9 2021"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 ```{r}
 library(tidyverse)
@@ -20,7 +22,7 @@ reliabilitet <- read_excel("data/realabilitet uttrekning.xlsx") %>%
              L = qt(0.975, 4) * s) %>% # Calculate as a percentage of the mean
 print()
   
-reliabilitet
+reliabilitet$cv
 ```
 ## Resultat 
 Typsisk error for Vo2maks-test var `r cv`%
