@@ -14,11 +14,8 @@ til å ta opp og forbruke oksygen per tidsenhet(Hill & Lupton, 1923, Basset & Ho
 toppidrett måles ofte det maksimale oksygenopptaket for å måle utøverens kapasitet opp mot arbeidskravet
 i den spesifikke idretten, og det maksimale oksygenopptaket kan i så måte også sees på som et mål på den
 aerobe kapasiteten til utøveren (Bahr et al 1992). I Olympiatoppens testprotokoller benytter de flere
-definerte hjelpekriterier for å sikre at man faktisk har funnet deltakerens maksimale oksygenopptak
-(Tønnesen et al, 2017). Følgende kriterier er beskrevet; platå i V'O2 er oppnådd, økning i ventilasjon
-med utflating av V'O2 verdi, RER over 1.10/1.05, og blodlaktat over 8.
-
-Legge til mer fra Beltz 2016, Graded Excercise Testing??
+definerte hjelpekriterier for å sikre at man faktisk har funnet deltakerens maksimale oksygenopptak. Følgende kriterier er beskrevet; platå i V'O2 er oppnådd, økning i ventilasjon
+med utflating av V'O2 verdi, RER over 1.10/1.05, og blodlaktat over 8 (Tønnesen et al, 2017).
 
 
 ##Metode
@@ -255,3 +252,8 @@ sammenlignet med de deltakerne som gjennomførte testen for første gang på pre
 kjennskapen og kunnskapen de tilegnet seg på pre-test, trolig spiller inn på testresultatene.
 Standardfeilen på 4.04% kan også tyde på at enkelte av disse resultatene kan være utsatt for
 konfundering av ulik sort (Hopkins,2000). 
+
+Grunnen til at vi snakker om standardfeil er at når vi ønsker å måle påvirkningen av trening på en gruppe individer er det viktig å kunne si noe om hva som er endring og hva som er støy(målefeil). Desto mindre støy en test innebærer jo bedre er målingen.  Målet som brukes er standardfeil. Hva som danner denne variasjonen som representeres ved typical error er multifaktorelt, men hoveddelen er som oftest biologisk (Hopkins,2000). 
+
+For å måle standardfeil har vi brukt within subject deviation metoden. Denne metoden påvirkes ikke av at gjennomsnittet endrer seg fra test til test (Hopkins,2000). Data for målinger i VO2max fra fem sertifiserte Australske laboratorier fastslo ett gjennomsnitt på 2.2% for standardfeil (Australian Institute of Sport Human Kinetics, Physiological Tests for Elite Athletes second Edition, 2012). Data fra det Australske institutt for sport har også fastslått at en standardfeil på omtrent 2% er riktig for både maksimal og submaksimal VO2 (Clark et al. 2007; Robertson et al. 2010; Saunders et al. 2009). Dette indikerer at med godt kalibrert utstyr og med utøvere som er godt vant med testingen vil en standardfeil på 2% for det biologiske, og analytiske være riktig (Halperin, Pyne, and Martin 2015). 
+Vår standardfeil på 4.04% kan derfor tenkes å være et bilde hvordan det kan se ut med få deltakere, med ulikt utgangspunkt, men også uten skikkelig standardisering av treningshverdagen, og med varierende nivå kan det også tenkes at noen fikk treningseffekt av test 1, samtidig som andre kanskje ble slitne av å få en test inn i treningshverdagen
